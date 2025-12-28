@@ -7,7 +7,6 @@ This document outlines the complete structure of the SkillProof application work
 ### 1. OVERVIEW & TABLE OF CONTENTS
 - Project overview
 - Architecture summary
-- Recent updates/status
 
 ### 2. LANDING PAGE & ONBOARDING FLOWS
 - Landing page flow (public)
