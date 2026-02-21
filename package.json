@@ -7,14 +7,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ai\"",
-    "dev:frontend": "cd packages/frontend && npm run dev",
-    "dev:backend": "cd packages/backend && npm run start:dev",
-    "dev:ai": "cd packages/ai-service && python -m uvicorn main:app --reload",
-    "dev:no-ai": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-    "build": "npm run build --workspaces",
-    "build:frontend": "cd packages/frontend && npm run build",
-    "build:backend": "cd packages/backend && npm run build",
+    "dev": "node init && concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ai\"",
+    "dev:frontend": "node init && cd packages/frontend && npm run dev",
+    "dev:backend": "node init && cd packages/backend && npm run start:dev",
+    "dev:ai": "node init && cd packages/ai-service && python -m uvicorn main:app --reload",
+    "dev:no-ai": "node init && concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build": "node init && npm run build --workspaces",
+    "build:frontend": "node init && cd packages/frontend && npm run build",
+    "build:backend": "node init && cd packages/backend && npm run build",
     "lint": "npm run lint --workspaces",
     "test": "npm run test --workspaces",
     "install:all": "npm install && npm install --workspaces"
@@ -27,4 +27,3 @@
     "npm": ">=9.0.0"
   }
 }
-
